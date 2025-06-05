@@ -14,16 +14,14 @@
 git clone https://github.com/katevarivoda/python_advanced.git
 cd python_advanced
 
-2. Установи зависимости
-bash
-Копировать
-Редактировать
+### 2. Установи зависимости
+
 
 python -m venv .venv
 .\.venv\Scripts\activate  # для Windows
 pip install -r requirements.txt
 
-3. Запусти приложение
+### 3. Запусти приложение
 
 
 uvicorn app.main:app --reload
@@ -37,16 +35,11 @@ uvicorn app.main:app --reload
 GET	/api/users/{id}	Получение пользователя по ID
 
 Пример:
-
-bash
-Копировать
-Редактировать
-GET http://localhost:8000/api/users/2
+GET http://localhost:8000/api/users/1
 Ответ:
-
 {
   "data": {
-    "id": 2,
+    "id": 1,
     "email": "janet.weaver@reqres.in",
     "first_name": "Janet",
     "last_name": "Weaver"
@@ -54,13 +47,9 @@ GET http://localhost:8000/api/users/2
 }
 
 
-🧰 Используемые технологии
+### Используемые технологии
 Python 3.11+
-
 FastAPI
-
 Uvicorn
-
 Pytest
-
 Requests
