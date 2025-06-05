@@ -19,7 +19,7 @@ cd python_advanced
 
 ```bash
 python -m venv .venv
-.\.venv\Scriptsctivate  # для Windows
+.\.venv\Scripts\activate  # для Windows
 pip install -r requirements.txt
 ```
 
@@ -54,7 +54,7 @@ GET http://localhost:8000/api/users/2
 ```json
 {
   "data": {
-    "id": 2,
+    "id": 1,
     "email": "janet.weaver@reqres.in",
     "first_name": "Janet",
     "last_name": "Weaver"
@@ -72,9 +72,9 @@ GET http://localhost:8000/api/users/2
 import requests
 
 def test_user_data():
-    response = requests.get("http://localhost:8000/api/users/2")
+    response = requests.get("http://localhost:8000/api/users/1")
     assert response.status_code == 200
-    assert response.json()["data"]["id"] == 2
+    assert response.json()["data"]["id"] == 1
 ```
 
 ### Запуск всех тестов
