@@ -15,15 +15,11 @@ git clone https://github.com/katevarivoda/python_advanced.git
 cd python_advanced
 
 ### 2. Установи зависимости
-
-
 python -m venv .venv
 .\.venv\Scripts\activate  # для Windows
 pip install -r requirements.txt
 
 ### 3. Запусти приложение
-
-
 uvicorn app.main:app --reload
 
 Приложение будет доступно на: http://localhost:8000
@@ -45,7 +41,6 @@ GET http://localhost:8000/api/users/1
     "last_name": "Weaver"
   }
 }
-
 
 ### Используемые технологии
 Python 3.11+
