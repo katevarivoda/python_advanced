@@ -1,66 +1,111 @@
-🧪 Reqres Clone на FastAPI
-Проект на FastAPI, реализующий базовый функционал REST API в стиле reqres.in, с хранением данных в JSON-файле и автотестами.
+# 🧪 Reqres Clone на FastAPI
 
-📁 Репозиторий: https://github.com/katevarivoda/python_advanced
+Проект на FastAPI, реализующий базовый функционал REST API в стиле [reqres.in](https://reqres.in), с хранением данных в JSON-файле и автотестами.
 
-🚀 Быстрый старт
-1. Клонируй проект
+📁 Репозиторий: [katevarivoda/python_advanced](https://github.com/katevarivoda/python_advanced)
+
+---
+
+## 🚀 Быстрый старт
+
+### 1. Клонируй проект
+
+```bash
 git clone https://github.com/katevarivoda/python_advanced.git
 cd python_advanced
+```
 
-2. Установи зависимости
+### 2. Установи зависимости
+
+```bash
 python -m venv .venv
-..venv\Scripts\activate # для Windows
+.\.venv\Scriptsctivate  # для Windows
 pip install -r requirements.txt
+```
 
-3. Запусти приложение
+### 3. Запусти приложение
+
+```bash
 uvicorn app.main:app --reload
+```
 
-Приложение будет доступно на: http://localhost:8000
-Документация: http://localhost:8000/docs
+Приложение будет доступно по адресу:  
+[http://localhost:8000](http://localhost:8000)
 
-📚 Доступные эндпоинты
-Метод: GET
-URL: /api/users/{id}
-Описание: Получение пользователя по ID
+Документация Swagger:  
+[http://localhost:8000/docs](http://localhost:8000/docs)
 
-Пример запроса:
+---
+
+## 📚 Доступные эндпоинты
+
+| Метод | URL               | Описание                     |
+|-------|-------------------|------------------------------|
+| GET   | `/api/users/{id}` | Получение пользователя по ID |
+
+### Пример запроса
+
+```
 GET http://localhost:8000/api/users/2
+```
 
-Пример ответа:
+### Пример ответа
+
+```json
 {
-"data": {
-"id": 2,
-"email": "janet.weaver@reqres.in",
-"first_name": "Janet",
-"last_name": "Weaver"
+  "data": {
+    "id": 2,
+    "email": "janet.weaver@reqres.in",
+    "first_name": "Janet",
+    "last_name": "Weaver"
+  }
 }
-}
+```
 
-🧪 Автотесты
-Пример файла: tests/test_regress.py
+---
 
+## 🧪 Автотесты
+
+Пример: `tests/test_regress.py`
+
+```python
 import requests
 
 def test_user_data():
-response = requests.get("http://localhost:8000/api/users/2")
-assert response.status_code == 200
-assert response.json()["data"]["id"] == 2
+    response = requests.get("http://localhost:8000/api/users/2")
+    assert response.status_code == 200
+    assert response.json()["data"]["id"] == 2
+```
 
-Запуск всех тестов:
+### Запуск всех тестов
+
+```bash
 pytest
+```
 
-💾 Источник данных
+---
+
+## 💾 Источник данных
+
 Пользователи хранятся в файле:
+
+```
 app/data/users.json
+```
 
-🧰 Используемые технологии
-Python 3.11+
+---
 
-FastAPI
+## 🧰 Используемые технологии
 
-Uvicorn
+- Python 3.11+
+- FastAPI
+- Uvicorn
+- Pytest
+- Requests
 
-Pytest
+---
 
-Requests
+## 👩‍💻 Автор
+
+[Kate Varivoda](https://github.com/katevarivoda)  
+Проект в рамках тренинга [QA.Guru Python Advanced](https://qa.guru/)
