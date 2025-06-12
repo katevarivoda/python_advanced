@@ -1,7 +1,14 @@
 from fastapi import APIRouter, HTTPException
+from fastapi_pagination import paginate, Page
+
 from app.models.user import users_data
 
 router = APIRouter()
+
+@router.get("/users", response_model=Page[dict])
+def get_users():
+    return paginate(users_data)
+
 
 @router.get("/users/{user_id}")
 def get_user(user_id: int):
