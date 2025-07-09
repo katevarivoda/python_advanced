@@ -21,11 +21,13 @@ def test_openapi_schema():
     assert response.json()["info"]["title"] == "Reqres Clone"
 
 
-def test_existing_user():
-    response = requests.get(f"{BASE_URL}/api/users/1")
+def test_existing_user(fill_test_data):
+    user_id = fill_test_data[0]
+    response = requests.get(f"http://localhost:8000/api/users/{user_id}")
     assert response.status_code == 200
     user = response.json()
-    assert user["id"] == 1
+    assert user["id"] == user_id
+
 
 
 def test_non_existing_user_returns_404():
